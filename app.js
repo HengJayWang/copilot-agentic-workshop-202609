@@ -90,10 +90,22 @@ function getEmptyMessage() {
   if (todos.length === 0) {
     return '還沒有任何待辦事項,新增一個吧!';
   }
+
   if (currentFilter === 'active') {
+    if (todos.some((todo) => todo.completed)) {
+      return '目前沒有未完成的事項。這些項目只是被目前篩選條件過濾掉,並不是被刪除。請切回「全部」查看。';
+    }
     return '太棒了,沒有未完成的事項!';
   }
-  return '還沒有已完成的事項。';
+
+  if (currentFilter === 'completed') {
+    if (todos.some((todo) => !todo.completed)) {
+      return '目前沒有已完成的事項。這些項目只是被目前篩選條件過濾掉,並不是被刪除。請切回「全部」查看。';
+    }
+    return '還沒有已完成的事項。';
+  }
+
+  return '還沒有任何待辦事項,新增一個吧!';
 }
 
 /** 依照目前的 todos 陣列與篩選條件,重新畫出整份清單 */
