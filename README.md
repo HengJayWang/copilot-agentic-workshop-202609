@@ -6,6 +6,8 @@
 
 ### 🌟 You've successfully completed the exercise! 🌟
 
+👉 **[查看完整作品集說明 (PORTFOLIO.md)](PORTFOLIO.md)**
+
 ## 🚀 Share Your Success!
 
 **Show off your new skills and inspire others!**
